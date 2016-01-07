@@ -1,7 +1,8 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
+from snippets.models import Snippet
 
-class SnippetSerializers(serializers.ModelSerializer):
+class SnippetSerializer(serializers.ModelSerializer):
 	owner = serializers.ReadOnlyField(source='owner.username')
 	class Meta:
 		model = Snippet
